@@ -1,6 +1,8 @@
 package testRunner;
 
-@RunWith()
+import org.junit.runner.RunWith;
+
+
 public class TestRunner {
 
 

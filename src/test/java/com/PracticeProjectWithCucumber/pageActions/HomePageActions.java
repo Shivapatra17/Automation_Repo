@@ -1,5 +1,7 @@
 package com.PracticeProjectWithCucumber.pageActions;
 
+import java.util.ArrayList;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -13,8 +15,6 @@ public class HomePageActions {
 	private WebDriver driver;
 	
 	HomePageWebElements homePageWE;
-	
-	
 	
 	public HomePageActions(CommonSteps commonSteps) {
 		this.driver=commonSteps.getDriver();
@@ -38,23 +38,49 @@ public class HomePageActions {
 	public void clickSignupButton() {
 		homePageWE.signupButton.click();
 	}
-	public void slectRadioBtn1() {
-		homePageWE.radioButton1.click();
+	public void selectOption(String option) {
+		char firstChar = option.charAt(0);
+		char lastChar = option.charAt(option.length() - 1);
+		
+		switch(lastChar) {
+		  case '1':
+			  	if(firstChar=='c') {homePageWE.checkBoxOption1.click();}
+			  	else { homePageWE.radioButton1.click();}
+		    break;
+		  case '2':
+				if(firstChar=='c') {homePageWE.checkBoxOption2.click();}
+			  	else { homePageWE.radioButton2.click();}
+		    break;
+		  case '3':
+				if(firstChar=='c') {homePageWE.checkBoxOption3.click();}
+			  	else { homePageWE.radioButton3.click();}
+			break;
+		  default:
+		    // code block
+		}
+		
 	}
-	public void slectRadioBtn2() {
-		homePageWE.radioButton2.click();
-	}
-	public void slectRadioBtn3() {
-		homePageWE.radioButton3.click();
-	}
+	
 	public void enterContory(String country) {
 		homePageWE.contryInputFiled.sendKeys(country);
 	}
 	public void selectDropDown(String option) {
-		
 		WebElement listBox = homePageWE.dropDownList;
 		Select select = new Select(listBox);
-		select.selectByVisibleText(option);
-		
+		select.selectByVisibleText(option);	
 	}
+	
+/*	public String getSelectedRadioButton() {
+		String stringvalue=null;
+		int count = homePageWE.listradioButton.s
+		for(int i=0;i;i++)
+		 boolean selectedRadioButton = homePageWE.listradioButton.isSelected();
+		 if(selectedRadioButton) {
+			 stringvalue = homePageWE.listradioButton.getText();
+		 }
+		return stringvalue;
+	}
+	*/
+	
+
 }

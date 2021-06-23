@@ -1,8 +1,11 @@
 package com.PracticeProjectWithCucumber.pageObject;
 
+import java.awt.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import stepDefinition.CommonSteps;
@@ -25,11 +28,13 @@ public class HomePageWebElements {
 @FindBy(xpath="//input[@value='radio1']") public WebElement radioButton1;
 @FindBy(xpath="//input[@value='radio2']") public WebElement radioButton2;
 @FindBy(xpath="//input[@value='radio3']") public WebElement radioButton3;
+@FindBy(xpath="//input[@name='radioButton']") public WebElement listradioButton;
 @FindBy(id="autocomplete") public WebElement contryInputFiled;
 @FindBy(xpath="//select[@id='dropdown-class-example']") public WebElement dropDownList;
 @FindBy(xpath="//input[@id='checkBoxOption1']") public WebElement checkBoxOption1;
 @FindBy(xpath="//input[@id='checkBoxOption2']") public WebElement checkBoxOption2;
 @FindBy(xpath="//input[@id='checkBoxOption3']") public WebElement checkBoxOption3;
+//@FindBys(name="radioButton") public List<WebElement> listcheckBoxOption;
 @FindBy(css="#openwindow") public WebElement openWindow;
 @FindBy(css="#opentab") public WebElement opentab;
 @FindBy(css="#name") public WebElement alertInputField;
